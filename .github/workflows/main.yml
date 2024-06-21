@@ -17,3 +17,18 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+
+          # Custom options
+          plugin_notable: yes
+
+          plugin_contributors: yes
+          plugin_contributors_sections: categories
+          plugin_contributors_categories: |
+            {
+            "📚 Documentation": ["README.md", "docs/**"],
+            "💻 Code": ["source/**", "src/**", "README.md", "**/README.md", "**/metadata.yml"],
+            "🐍 Build": ["pyproject.toml", "setup.py"],
+            "#️⃣ Others": ["*"]
+            }
+
+          plugin_gists: yes
